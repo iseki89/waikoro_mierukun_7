@@ -334,7 +334,7 @@ javascript:(function(){
 		for(i=0;i<chars.length;i++){
 			const f = chars[i].getElementsByTagName("font");
 			let dieFont = false;
-			if(!f[0].innerHTML.match(/.+ \d*枚/g)){
+			if(!f[1].innerHTML.match(/.+ \d*枚/g)){
 				dieFont = true;
 			}
 			// console.log(dieFont);
@@ -352,7 +352,7 @@ javascript:(function(){
 			}
 
 			char_state[i]["testBet"] = 0;
-			for(j=1;j<f.length;j++){
+			for(j=1;j<f.length;j++){ //jが1スタートなのは、キャラのセリフがfontタグだから。
 				if(j==1 && dieFont){//死んだキャラのHP表示がfontタグになるせいでバグるのを回避したいのよ
 					j++;
 					// console.log("j増やしたよ");
