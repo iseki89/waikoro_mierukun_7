@@ -334,9 +334,12 @@ javascript:(function(){
 		for(i=0;i<chars.length;i++){
 			const f = chars[i].getElementsByTagName("font");
 			let dieFont = false;
-			if(!f[1].innerHTML.match(/.+ \d*枚/g)){
-				dieFont = true;
+			if(f.length > 1){
+				if(!f[1].innerHTML.match(/.+ \d*枚/g)){
+					dieFont = true;
+				}
 			}
+
 			// console.log(dieFont);
 
 			if(chars.length!=char_bet.length){
